@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary My Love ❤️</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        .container {
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            color: #d63384;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .subtitle {
+            color: #6c757d;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        /* Envelope Card Styling */
+        .card-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 15px 35px rgba(214, 51, 132, 0.2);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        .btn-open {
+            background: #ff4b5c;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 75, 92, 0.4);
+            transition: transform 0.2s, background 0.2s;
+        }
+        .btn-open:hover {
+            transform: scale(1.05);
+            background: #e63946;
+        }
+        .secret-content {
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        .letter {
+            font-size: 1.1rem;
+            color: #495057;
+            line-height: 1.8;
+            text-align: left;
+            background: #fff5f6;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #ff4b5c;
+            margin-top: 15px;
+        }
+        
+        /* Photo Gallery */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .photo-grid img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Floating Hearts */
+        .heart {
+            position: fixed;
+            font-size: 20px;
+            color: #ff4b5c;
+            user-select: none;
+            pointer-events: none;
+            animation: moveUp 4s linear infinite;
+        }
+        @keyframes moveUp {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Happy Anniversary! 🎉❤️</h1>
+        <p class="subtitle">တို့နှစ်ယောက်ရဲ့ အမှတ်တရနေ့လေးအတွက် Special Gift 🎁</p>
+
+        <div class="card-container">
+            <button class="btn-open" onclick="openSurprise()">💌 စာအိတ်လေး ဖွင့်ကြည့်ပါဦး 💌</button>
+
+            <div class="secret-content" id="surprise">
+                <div class="letter">
+                    <p>✨ **ချစ်ရပါသော ကောင်လေးသို့...** ✨</p><br>
+                    <p>ငါတို့နှစ်ယောက် အတူတူ လျှောက်လှမ်းလာခဲ့တာ အခုဆိုရင် နှစ်ပတ်လည်နေ့ကို ရောက်ခဲ့ပြီနော်။</p><br>
+                    <p>အမြဲတမ်း ဂရုစိုက်ပေးပြီး ချစ်ပေးလို့ ကျေးဇူးအများကြီးတင်ပါတယ်။ ရှေ့ဆက်ပြီးတော့လည်း အတူတူ အကြာကြီး ချစ်သွားကြရအောင်နော်! 💕✨</p>
+                </div>
+
+                <!-- ဓာတ်ပုံလေးတွေ ထည့်ချင်ရင် အောက်က link နေရာမှာ မိမိပုံ link ပြောင်းထည့်လို့ရပါတယ် -->
+                <div class="photo-grid">
+                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400" alt="Memory 1">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=400" alt="Memory 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openSurprise() {
+            document.getElementById('surprise').style.style.display = 'block';
+            document.querySelector('.btn-open').style.display = 'none';
+        }
+
+        // Floating Hearts Function
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = ['❤️', '💖', '💕', '🌸', '✨'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }
+        setInterval(createHeart, 400);
+    </script>
+</body>
+</html>
